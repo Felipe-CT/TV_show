@@ -1,0 +1,60 @@
+{% extends "base.html"%}
+{% block titulo %}Crear{% endblock %}
+{% block estilos %}
+{% endblock %}
+{% block contenido %}
+{% if messages %}
+<ul class="messages">    
+    {% for message in messages %}    
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+    {% endfor %}
+</ul>
+{% endif %}
+<div class="container mt-4">
+    <div class="row align-items-start">
+        <div class="col-6">
+            <h1> 
+                Crear Nuevo Show 
+            </h1>
+            <hr>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="row g-4 mt-1 align-items-center" >
+                    <div class="col-4">
+                        <label class="col-form-label">Titulo</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" class="form-control" name="title">
+                    </div>
+                </div>
+                <div class="row g-4 mt-1 align-items-center">
+                    <div class="col-4">
+                        <label class="col-form-label">Canal</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" class="form-control" name="network">
+                    </div>
+                </div>
+                <div class="row g-4 mt-1 align-items-center">
+                    <div class="col-4">
+                        <label class="col-form-label">Fecha Estreno </label>
+                    </div>
+                    <div class="col-8">
+                        <input type="date" class="form-control" name="release_date">
+                    </div>
+                </div>
+                <hr>
+                <h5>Descripcion</h5>
+                <textarea class="form-control ml-1" name="desc" cols="47" rows="4" ></textarea>
+                <div class="row g-4 mt-1 align-items-center">
+                    <div class="col-4">
+                    </div>
+                    <div class="col-8">
+                        <button type="submit" class="btn alert-primary">Crear Nuevo Show</button>
+                    </div>
+                </div>
+            </form>
+</div>
+{% endblock %}
+{% block scripts %}
+{% endblock %}

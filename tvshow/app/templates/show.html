@@ -1,0 +1,23 @@
+{% extends "base.html"%}
+
+{% block titulo %}Inicio{% endblock %}
+
+{% block estilos %}
+{% endblock %}
+{% block contenido %}
+<div class="container mt-4">
+    <h6> ID:{{show.id}}</h4>
+    <h1>Titulo:{{show.title}}</h1>
+    <h5>Canal: {{show.network}}</h5>
+    <h5>Estreno: {{show.release_date}}</h5>
+    <hr>
+    <p>Descripcion: </p>
+    <p>{{show.desc}}</p>
+    <hr>
+    <a href="{% url 'edit' id=show.id %}" class="btn btn-sm btn-success"></a>
+    <a href="{% url 'delete' id=show.id %}" class="btn btn-sm btn-success"></a>
+    
+</div>
+{% endblock %}
+{% block scripts %}
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html"%}
+{% block titulo %}{% endblock %}
+{% block estilos %}
+{% endblock %}
+{% block contenido %}
+<div class="container">
+    <h1>All Shows</h1>
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titulo</th>
+                <th>Canal</th>
+                <th>Fecha Estreno</th>
+                <th>Descripcion</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if show %}
+            {% for show in shows %}
+            <tr>
+                <td>{{show.id}}</td>
+                <td>{{show.title}}</td>
+                <td>{{show.network}}</td>
+                <td>{{show.release_date}}</td>
+                <td>{{show.desc}}</td>
+                <td> 
+                    <a href="{% url 'show' id=show.id %}" class="btn btn-sm btn-success"> Show </a>
+                    <a href="{% url 'edit' id=show.id %}" class="btn btn-sm btn-success"> Editar </a>
+                    <a href="{% url 'delete' id=show.id %}" class="btn btn-sm btn-success"> Borrar </a>
+                </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+    <a href="{% url 'create' %}" class="btn btn-primary"> Crear Nuevo Show</a>    
+</div>
+{% endblock %}
+{% block scripts %}
+{% endblock %}

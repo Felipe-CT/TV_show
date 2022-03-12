@@ -1,0 +1,25 @@
+{% extends "base.html"%}
+
+{% block titulo %}Inicio{% endblock %}
+
+{% block estilos %}
+{% endblock %}
+{% block contenido %}
+
+<div class="container-fluid mt-4">
+    <h1> Bienvenido a TV Shows</h1>
+</div>
+<div class="col-4" style="margin-left: 115px;">
+    <img src="https://i.gifer.com/7DSO.gif">
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+    toastr.info("Registra tus shows favoritos", "TV Show");
+</script>
+
+
+{% endblock %}
